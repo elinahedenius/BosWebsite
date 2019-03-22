@@ -1,8 +1,12 @@
 h1 {
   text-align: center;
+  margin-top: 12rem;
+  font-size: 5rem;
 }
 
 body
 {
-  font-family:"archivo narrow"
+  font-family:"archivo narrow";
+  color: #f9f9f2;
+  background-color: #66c1b2;
 }
