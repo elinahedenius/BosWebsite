@@ -1,12 +1,34 @@
 h1 {
-  text-align: center;
-  margin-top: 12rem;
-  font-size: 5rem;
+  font-size: 8rem;
 }
 
-body
-{
-  font-family:"archivo narrow";
+h2 {
+  font-size: 1rem;
+}
+
+body {
+  font-family: "archivo narrow";
   color: #f9f9f2;
   background-color: #66c1b2;
+  margin: 0;
+}
+
+section {
+  height: 100vh;
+}
+
+#welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  padding-bottom: 0.2em;
+}
+
+#second-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
