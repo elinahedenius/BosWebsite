@@ -1,0 +1,52 @@
+h1 {
+  font-size: 8rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+img {
+  height: 14rem;
+  margin: 0.01rem
+}
+
+body {
+  font-family: "archivo narrow";
+  color: #f9f9f2;
+  background-color: #66c1b2;
+  margin: 0;
+}
+
+section {
+  height: 100vh;
+}
+
+#welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  padding-bottom: 0.2em;
+}
+
+#second-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+#images {
+  justify-content: left;
+}
+
+#declaration-of-plant-love {
+  padding-bottom: 3em;
+}
