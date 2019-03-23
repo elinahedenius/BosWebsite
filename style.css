@@ -7,8 +7,8 @@ h2 {
 }
 
 img {
-  height: 12rem;
-  margin: 1rem
+  height: 14rem;
+  margin: 0.01rem
 }
 
 body {
@@ -45,7 +45,8 @@ section {
 
 #images {
   justify-content: left;
-  align-items: center;
 }
 
-#decleration-of-plant-love {}
+#declaration-of-plant-love {
+  padding-bottom: 3em;
+}
