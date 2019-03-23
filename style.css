@@ -3,7 +3,12 @@ h1 {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 2rem;
+}
+
+img {
+  height: 12rem;
+  margin: 1rem
 }
 
 body {
@@ -31,4 +36,16 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+#images {
+  justify-content: left;
+  align-items: center;
+}
+
+#decleration-of-plant-love {}
