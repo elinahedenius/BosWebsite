@@ -32,10 +32,9 @@ section {
 }
 
 #second-page {
+  display: flex;
   justify-content: left;
   align-items: top;
-  padding-left: 3em;
-  padding-top: 2em;
 }
 
 .button {
@@ -52,4 +51,14 @@ section {
 #button_text {
   font-family: "archivo narrow";
   font-size: 20px;
+}
+
+#plantbutton {
+  padding-top: 2em;
+  padding-left: 3em;
+}
+
+#stuffbutton {
+  padding-top: 2em;
+  padding-left: 3em;
 }

@@ -69,3 +69,8 @@ section {
 #button_text {
   font-family: "archivo narrow";
 }
+
+#go-back-button {
+  padding-left: 3em;
+  padding-top: 2em;
+}
