@@ -16,3 +16,27 @@ body {
   background-color: #8fbfa1;
   margin: 0;
 }
+
+.button {
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  background-color: #a4ddbb;
+  color: white;
+}
+
+.button:hover {
+  background-color: #b7f4cf;
+}
+
+#button_text {
+  font-family: "archivo narrow";
+}
+
+#title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
