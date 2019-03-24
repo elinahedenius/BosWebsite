@@ -1,0 +1,18 @@
+h1 {
+  font-size: 8rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+body {
+  font-family: "archivo narrow";
+  color: #f9f9f2;
+  background-color: #8fbfa1;
+  margin: 0;
+}
