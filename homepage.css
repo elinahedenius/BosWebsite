@@ -6,15 +6,14 @@ h2 {
   font-size: 2rem;
 }
 
-img {
-  height: 14rem;
-  margin: 0.01rem
+h3 {
+  font-size: 1rem;
 }
 
 body {
   font-family: "archivo narrow";
   color: #f9f9f2;
-  background-color: #66c1b2;
+  background-color: #8fbfa1;
   margin: 0;
 }
 
@@ -33,20 +32,24 @@ section {
 }
 
 #second-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.rotate {
-  transform: rotate(90deg);
-}
-
-#images {
   justify-content: left;
+  align-items: top;
+  padding-left: 3em;
+  padding-top: 2em;
 }
 
-#declaration-of-plant-love {
-  padding-bottom: 3em;
+.button {
+  padding: 5px 25px;
+  border-radius: 12px;
+  background-color: #a4ddbb;
+  color: white;
+}
+
+.button:hover {
+  background-color: #b7f4cf;
+}
+
+#button_text {
+  font-family: "archivo narrow";
+  font-size: 20px;
 }
