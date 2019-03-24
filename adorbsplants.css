@@ -6,6 +6,10 @@ h2 {
   font-size: 2rem;
 }
 
+h3 {
+  font-size: 1rem;
+}
+
 img {
   height: 14rem;
   margin: 0.01rem
@@ -32,21 +36,25 @@ section {
   padding-bottom: 0.2em;
 }
 
-#second-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .rotate {
   transform: rotate(90deg);
 }
 
 #images {
   justify-content: left;
+  align-items: center;
 }
 
 #declaration-of-plant-love {
+  display: flex;
   padding-bottom: 3em;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu {
+  align-items: left;
+  justify-content: center;
+  padding-left: 2em;
+  padding-top: 1.5em;
 }
