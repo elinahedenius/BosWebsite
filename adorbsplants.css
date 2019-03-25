@@ -41,15 +41,9 @@ section {
 }
 
 #images {
+  padding-top: 5em;
   justify-content: left;
   align-items: center;
-}
-
-#declaration-of-plant-love {
-  display: flex;
-  padding-bottom: 3em;
-  align-items: top;
-  justify-content: center;
 }
 
 .button {
@@ -73,4 +67,11 @@ section {
 #go-back-button {
   padding-left: 3em;
   padding-top: 2em;
+}
+
+#header {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  padding-bottom: 2em;
 }
