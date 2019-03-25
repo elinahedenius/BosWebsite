@@ -53,6 +53,10 @@ section {
   font-size: 20px;
 }
 
+#sparklygif {
+  height: 300px;
+}
+
 #plantbutton {
   padding-top: 2em;
   padding-left: 3em;
@@ -63,6 +67,7 @@ section {
   padding-left: 3em;
 }
 
-#sparklygif {
-  height: 300px;
+#depressionbutton {
+  padding-top: 2em;
+  padding-left: 3em;
 }
