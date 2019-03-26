@@ -73,5 +73,8 @@ section {
   display: flex;
   align-items: top;
   justify-content: center;
-  padding-bottom: 2em;
+}
+
+#dancingplants {
+  height: 170px;
 }
