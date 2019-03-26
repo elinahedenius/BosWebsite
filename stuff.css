@@ -45,3 +45,11 @@ body {
   padding-left: 3em;
   padding-top: 2em;
 }
+
+#welcomegif {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  height: 300px;
+  width: auto;
+}
