@@ -25,6 +25,7 @@ body {
   border-radius: 12px;
   background-color: #a4ddbb;
   color: white;
+  cursor: pointer;
 }
 
 .button:hover {
