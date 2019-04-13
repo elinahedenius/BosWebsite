@@ -69,6 +69,6 @@ section {
   padding-left: 3em;
 }
 
-#sparklygif {
-  height: 300px;
+.sparklygif {
+  width: 24vw;
 }
