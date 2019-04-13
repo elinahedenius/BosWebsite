@@ -29,6 +29,8 @@ section {
 
 #title {
   padding-bottom: 0.2em;
+  white-space: nowrap;
+  font-size: 8vw;
 }
 
 #second-page {
