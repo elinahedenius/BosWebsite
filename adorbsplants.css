@@ -40,9 +40,14 @@ section {
   transform: rotate(90deg);
 }
 
-#images {
+#firstlignofimages {
   padding-top: 5em;
-  justify-content: left;
+  justify-content: center;
+  align-items: center;
+}
+#secondlignofimages {
+  padding-top: 7em;
+  justify-content: center;
   align-items: center;
 }
 
@@ -77,5 +82,5 @@ section {
 }
 
 #dancingplants {
-  height: 170px;
+  height: 150px;
 }
