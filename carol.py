@@ -1,12 +1,10 @@
-#Therapistbot
-#!/Python26/python
-print('Content-type: text/html\r\n\r')
+#Carol
 
 inpatient = 0
 blankinput = 0
 caroldead = False
 
-#Collecting name
+#Collecting names
 print('Carol: Hello. My name is Carol and I am your new therapist, what is your name?')
 print()
 name = input('Your name: ')
