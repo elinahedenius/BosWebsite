@@ -13,7 +13,7 @@ h3 {
 body {
   font-family: "archivo narrow";
   color: #f9f9f2;
-  background-color: #8fbfa1;
+  background-color: #1a1b5b;
   margin: 0;
 }
 
@@ -34,21 +34,23 @@ section {
 }
 
 #second-page {
-  display: flex;
-  justify-content: left;
+  display: flex; 
+  justify-content: center;
   align-items: top;
 }
 
 .button {
   padding: 5px 25px;
   border-radius: 12px;
-  background-color: #a4ddbb;
+  background-color: #d17bbf;
   color: white;
   cursor: pointer;
+  border-color: #fcccf2;
 }
 
 .button:hover {
-  background-color: #b7f4cf;
+  background-color: #9d5ea3;
+  border-color: #ce8ac0;
 }
 
 #button_text {

@@ -9,7 +9,7 @@ body {
   display: inline-block;
   border-radius: 12px;
   background-color: #969696;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
@@ -30,4 +30,10 @@ body {
 #go-back-button {
   padding-left: 3em;
   padding-top: 2em;
+}
+
+#psykstatus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
