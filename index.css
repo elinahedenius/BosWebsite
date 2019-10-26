@@ -34,7 +34,7 @@ section {
 }
 
 #second-page {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: top;
 }
@@ -42,15 +42,15 @@ section {
 .button {
   padding: 5px 25px;
   border-radius: 12px;
-  background-color: #d17bbf;
+  background-color: #f28fb2;
   color: white;
   cursor: pointer;
-  border-color: #fcccf2;
+  border-color: #ffd1e1;
 }
 
 .button:hover {
-  background-color: #9d5ea3;
-  border-color: #ce8ac0;
+  background-color: #bd5378;
+  border-color: #eba9c0;
 }
 
 #button_text {
