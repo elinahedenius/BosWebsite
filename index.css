@@ -17,14 +17,15 @@ body {
   margin: 0;
 }
 
-section {
-  height: 100vh;
-}
+section {}
 
 #welcome {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: top;
+  width: 100%;
+  height: 15vh;
+  padding-top: 1em;
 }
 
 #title {
@@ -33,10 +34,12 @@ section {
   font-size: 8vw;
 }
 
-#second-page {
-  display: flex;
+#buttonsection {
+  display: grid;
   justify-content: center;
-  align-items: top;
+  align-items: center;
+  width: 100%;
+  height: auto;
 }
 
 .button {
@@ -46,6 +49,7 @@ section {
   color: white;
   cursor: pointer;
   border-color: #ffd1e1;
+  width: 100%;
 }
 
 .button:hover {
@@ -59,25 +63,20 @@ section {
 }
 
 #plantbutton {
-  padding-top: 2em;
-  padding-left: 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 #stuffbutton {
-  padding-top: 2em;
-  padding-left: 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 #depressionbutton {
-  padding-top: 2em;
-  padding-left: 3em;
-}
-
-#benbutton {
-  padding-top: 2em;
-  padding-left: 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .sparklygif {
-  width: 24vw;
+  width: auto;
 }
