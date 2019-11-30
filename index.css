@@ -24,7 +24,6 @@ section {}
   align-items: center;
   width: 100%;
   height: 15vh;
-  padding-top: 1em;
   margin: 0;
 }
 
@@ -49,10 +48,9 @@ section {}
   cursor: pointer;
   border-color: #ffd1e1;
   width: 100%;
-  height: 50px; 
+  height: 50px;
   text-align: center;
   vertical-align: middle;
-
 }
 
 .button:hover {
@@ -88,7 +86,26 @@ section {}
 
 .sparklygif {
   width: auto;
-  height: 100%;
+  height: 25vw;
 }
 
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 600px) {
+  #welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+  }
+
+  #buttonsection {
+    display: flex;
+    margin: 0;
+  }
+
+  .button {
+    padding: 1em 1em 1em 1em;
+    height: 100px;
+  }
+}
