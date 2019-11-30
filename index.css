@@ -14,7 +14,6 @@ body {
   font-family: "archivo narrow";
   color: #f9f9f2;
   background-color: #1a1b5b;
-  margin: 0;
 }
 
 section {}
@@ -26,6 +25,7 @@ section {}
   width: 100%;
   height: 15vh;
   padding-top: 1em;
+  margin: 0;
 }
 
 #title {
@@ -34,21 +34,25 @@ section {}
 }
 
 #buttonsection {
-  display: grid;
+  display: block;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
+  margin: auto;
 }
 
 .button {
-  padding: 5px 25px;
+  padding: 0px;
   border-radius: 12px;
   background-color: #f28fb2;
   color: white;
   cursor: pointer;
   border-color: #ffd1e1;
   width: 100%;
+  height: 50px; 
+  text-align: center;
+  vertical-align: middle;
+
 }
 
 .button:hover {
@@ -62,21 +66,29 @@ section {}
 }
 
 #plantbutton {
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 #stuffbutton {
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 #depressionbutton {
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .sparklygif {
   width: auto;
   height: 100%;
 }
+
+@media only screen and (min-width: 768px) {}
