@@ -10,69 +10,63 @@ h3 {
   font-size: 1rem;
 }
 
-img {
-  height: 14rem;
-  margin: 0.01rem
-}
-
 body {
   font-family: "archivo narrow";
   color: #f9f9f2;
   background-color: #1a1b5b;
-  margin: 0;
+  justify-content: center;
 }
 
+/*header*/
 #header {
   display: flex;
+  width: 100vw;
+  height: 10vh;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 30vh;
-}
-
-#declarationofplantlove {
-  height: 25vh;
-  width: auto;
+  white-space: nowrap;
 }
 
 #dancingplants {
-  height: 15vh;
-  width: auto;
+  width: 20vw;
+  height: auto;
+}
+
+#declarationofplantlove {
+  height: auto;
+  width: 50vw;
+}
+
+/*image section*/
+.wrapper {
+  width: 100%;
+  align-items: top;
+  margin: 5vw;
+  justify-content: center;
 }
 
 .rotate {
   transform: rotate(90deg);
+  display: flex;
+  width: 40vw;
+  float: left;
+  justify-content: center;
+  margin-right: 5vw;
+  margin-bottom: 20vw;
 }
 
-.button {
-  padding: 5px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 12px;
-  background-color: #a4ddbb;
-  color: white;
-  cursor: pointer;
+.norotate {
+  width: 90vw;
 }
 
-.button:hover {
-  background-color: #b7f4cf;
-}
-
-#button_text {
-  font-family: "archivo narrow";
-}
-
-#go-back-button {}
-
-@media only screen and (max-width: 768px) {
+@media screen and (min-width: 600px) {
   #header {
-    height: 15vh;
-  }
-
-  #declarationofplantlove {
-    width: 50vw;
-    height: auto;
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
   }
 
   #dancingplants {
@@ -80,21 +74,30 @@ body {
     height: auto;
   }
 
-  .norotate {
-    display: block;
-    width: 90vw;
-    margin: auto;
+  #declarationofplantlove {
     height: auto;
+    width: 50vw;
+  }
+
+  /*image section*/
+  .wrapper {
+    width: 100%;
+    align-items: top;
+    margin: 5vw;
     justify-content: center;
+    display: flex;
   }
 
   .rotate {
-    padding-top: 2em;
-    padding-bottom: 2em;
+    transform: rotate(90deg);
+    width: 30vw;
+    float: left;
     justify-content: center;
-    width: 40vw;
     height: auto;
   }
 
-  #rotated-images {}
+  .norotate {
+    width: 40vw;
+    height: auto;
+  }
 }
