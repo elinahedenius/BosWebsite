@@ -6,7 +6,7 @@ body {
 
 #messagearea {
   overflow-y: scroll;
-  height: 90vh; 
+  height: 90vh;
 }
 
 #inputdiv {
@@ -32,3 +32,20 @@ body {
   font-weight: bold;
   font-family: "Comic Sans MS";
 }
+
+@media only screen and (max-width: 700px) {
+  body {
+    justify-content: center;
+  }
+  #inputdiv {
+    display: flex;
+    justify-content: center;
+    margin:auto;
+    height: 8vh;
+    align-items: center;
+  }
+  #message {
+    margin: auto;
+    width: 70vw;
+    height: 8vh;
+  }
