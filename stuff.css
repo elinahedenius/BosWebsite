@@ -13,7 +13,7 @@ h3 {
 body {
   font-family: "archivo narrow";
   color: #f9f9f2;
-  background-color: #8fbfa1;
+  background-color: #1a1b5b;
   margin: 0;
 }
 
@@ -23,13 +23,15 @@ body {
   text-decoration: none;
   display: inline-block;
   border-radius: 12px;
-  background-color: #a4ddbb;
+  background-color: #f28fb2;
   color: white;
   cursor: pointer;
+  border-color: #ffd1e1;
 }
 
 .button:hover {
-  background-color: #b7f4cf;
+  background-color: #bd5378;
+  border-color: #eba9c0;
 }
 
 #button_text {
