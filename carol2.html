@@ -47,6 +47,24 @@
     var qustiontocarol = ['you', '?'];
     var killscarol = ['kills carol', 'kills Carol', 'Killsl carol', 'Kills Carol'];
 
+    function searchforkeywords(message) {
+      for (a in suicidalsigns) {
+        if (a in message) {
+          var suicidal = true;
+        }
+      }
+      for (a in questiontocarol) {
+        if (a in message) {
+          var questionasked = true;
+        }
+      }
+      for (a in killscarol) {
+        if (a in message) {
+          var caroldead = true; 
+        }
+      }
+    }
+
     //The action begins
     carolsays('Hello, my name is Carol. What is your name?');
     var caroljustaskedname = true;
