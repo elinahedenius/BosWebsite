@@ -14,5 +14,30 @@
     //Collecting names
     document.write("Hello, my name is Carol, what is your name?")
     var name = prompt("Your name: ")
+
+    //phrases
+    var therapistphrase = ["I see...", ("How did that make you feel, " + name + "?")];
+
+    function getrandom(max) {
+      return Math.floor(Math.random() * (max));
+    }
+    //Major loop
+    while true {
+
+      var randomtherapistphrase = therapistphrase[getrandom(therapistphrase.lenght)];
+      if (inpatient > 0) {
+        document.write("*You are currently locked i a psychiatric unit*")
+      }
+
+      var message = prompt();
+
+      if (message = "no" | message = "No") {
+        document.write("Well are you gonna do anything about it?")
+        continue;
+      }
+
+      document.write(randomtherapistphrase)
+    }
+
   </script>
 </body>
