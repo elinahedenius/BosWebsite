@@ -36,13 +36,25 @@
       show('<br>');
     }
 
+    //phrases
+    therapistphrase = ['I see...', ('How did that make you feel, ' + name + '?'), 'Do you want to have it this way?', 'What makes you feel like that?'];
+    therapistmax = therapistphrase.lenght -1;
+
     //The action begins
     carolsays('Hello, my name is Carol. What is your name?');
+    var caroljustaskedname = true;
 
     function react_to_message() {
       var message = document.getElementById("message").value;
       yousay(message); //shows your input
       document.getElementById('message').value = ""; //Clears input box
+
+      if (caroljustaskedname == true) {
+        name = message;
+        carolsays('I see. So how are you today, ' + name + '?');
+        caroljustaskedname = false;
+      }
+
     }
 
   </script>
