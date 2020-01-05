@@ -5,14 +5,17 @@ body {
 }
 
 #messagearea {
+  overflow-y: scroll;
+  height: 90vh; 
 }
 
 #inputdiv {
   display: block;
   position: fixed;
-  bottom: 0vh;
+  bottom: 2vh;
   background-color: white;
   float: left;
+  width: 100vw;
 }
 
 @keyframes blinking {

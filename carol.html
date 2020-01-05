@@ -32,20 +32,28 @@
       show('Carol: ' + x);
       show('<br>');
       show('<br>');
-      window.scrollTo(0,document.body.scrollHeight);
+      ScrollDiv();
     }
 
     function yousay(x) {
       show('You: ' + x);
       show('<br>');
       show('<br>');
-      window.scrollTo(0,document.body.scrollHeight);
+      ScrollDiv();
     }
 
     function pageScroll() {
         window.scrollBy(0,50);
         scrolldelay = setTimeout('pageScroll()',50);
     }
+    function ScrollDiv(){
+      if(document.getElementById('messagearea').scrollTop<(document.getElementById('messagearea').scrollHeight-document.getElementById('messagearea').offsetHeight)){-1
+          document.getElementById('messagearea').scrollTop=document.getElementById('messagearea').scrollTop+1
+          }
+
+    }
+
+    setInterval(ScrollDiv,1)
 
     //phrases
     var therapistphrase = ['I see...', ('How did that make you feel, ' + name + '?'), 'Do you want to have it this way?', 'What makes you feel like that?'];
