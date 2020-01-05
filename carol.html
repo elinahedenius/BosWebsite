@@ -9,7 +9,7 @@
 
   <div id=inputdiv>
     <label for="message">You: </label>
-    <input type="text" id="message" name="message">
+    <input type="text" id="message" name="message" onkeydown="readinput(this, event)">
     <button onclick="react_to_message()">Say this</button>
     <span id="inpatient_text" style="display: none;">You are currently locked in a psychiatric unit.</span>
   </div>
@@ -84,6 +84,12 @@
     //The action begins
     carolsays('Hello, my name is Carol. What is your name?');
     var caroljustaskedname = true;
+
+    function readinput(el, e) {
+      if (e.keyCode == 13) {
+        react_to_message()
+      }
+    }
 
     function react_to_message() {
       var message = document.getElementById("message").value;
