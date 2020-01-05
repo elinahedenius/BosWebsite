@@ -62,24 +62,35 @@
     //React words
     var suicidalsigns = ['suicidal', 'die', 'death', 'suicide', 'kill'];
     var questiontocarol = ['you', '?'];
-    var killscarol = ['kills carol', 'kills Carol', 'Killsl carol', 'Kills Carol'];
+    var killscarol = ['*kills carol*', '*kills Carol*', '*Kills carol*', '*Kills Carol*'];
 
-    function searchforkeywords(message) {
-      for (var a in suicidalsigns) {
-        var arrayelement = suicidalsigns[a];
-        if (arrayelement == message) {
-          suicidal = true;
+    Array.prototype.inArray = function(value) {
+      var i;
+      for (i=0; i < this.length; i++) {
+        // Matches identical (===), not just similar (==).
+        if (this[i] === value) {
+            return true;
         }
       }
-      for (var b in questiontocarol) {
-        arrayelement = questiontocarol[b];
-        if (arrayelement == message) {
+      return false;
+    };
+
+    function searchforkeywords(message) {
+      var splitmessage = message.split(' ');
+      console.log(splitmessage);
+
+      for (a in suicidalsigns) {
+        if(splitmessage.indexOf(suicidalsigns[a]) >= 0){
+        suicidal = true;
+        }
+      }
+      for (a in questiontocarol) {
+        if (splitmessage.indexOf(questiontocarol[a]) >= 0) {
           questionasked = true;
         }
       }
-      for (var c in killscarol) {
-        var arrayelement = killscarol[c];
-        if (arrayelement == message) {
+      for (a in killscarol) {
+        if (message == killscarol[a]){
           caroldead = true;
         }
       }
