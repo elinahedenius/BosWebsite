@@ -12,8 +12,8 @@
     var caroldead = false;
 
     //Collecting names
-    document.write("Hello, my name is Carol, what is your name?")
-    var name = prompt("Your name: ")
+    document.write("Hello, my name is Carol, what is your name?");
+    var name = prompt("Your name: ");
 
     //phrases
     var therapistphrase = ["I see...", ("How did that make you feel, " + name + "?")];
@@ -22,21 +22,24 @@
       return Math.floor(Math.random() * (max));
     }
     //Major loop
-    while true {
+    while (true) {
 
       var randomtherapistphrase = therapistphrase[getrandom(therapistphrase.lenght)];
       if (inpatient > 0) {
-        document.write("*You are currently locked i a psychiatric unit*")
+        document.write("*You are currently locked i a psychiatric unit*");
       }
 
       var message = prompt();
 
-      if (message = "no" | message = "No") {
-        document.write("Well are you gonna do anything about it?")
+      if (message == "no" | message == "No") {
+        document.write("Well are you gonna do anything about it?");
         continue;
       }
 
-      document.write(randomtherapistphrase)
+      else {
+      document.write(randomtherapistphrase);
+      continue;
+      }
     }
 
   </script>
