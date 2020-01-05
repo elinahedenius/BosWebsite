@@ -10,8 +10,8 @@
   <div id=inputdiv>
     <label for="message">You: </label>
     <input type="text" id="message" name="message">
-
     <button onclick="react_to_message()">Say this</button>
+    <span id="inpatient_text" style="display: none;">You are currently locked in a psychiatric unit.</span>
   </div>
 
   <script type="text/javascript">
@@ -32,12 +32,19 @@
       show('Carol: ' + x);
       show('<br>');
       show('<br>');
+      window.scrollTo(0,document.body.scrollHeight);
     }
 
     function yousay(x) {
       show('You: ' + x);
       show('<br>');
       show('<br>');
+      window.scrollTo(0,document.body.scrollHeight);
+    }
+
+    function pageScroll() {
+        window.scrollBy(0,50);
+        scrolldelay = setTimeout('pageScroll()',50);
     }
 
     //phrases
@@ -70,6 +77,10 @@
       }
     }
 
+    function showinpatienttext() {
+      document.getElementById('inpatient_text').style.display = 'flex';
+    }
+
     //The action begins
     carolsays('Hello, my name is Carol. What is your name?');
     var caroljustaskedname = true;
@@ -78,6 +89,10 @@
       var message = document.getElementById("message").value;
       var randomtherapistphrase = therapistphrase[Math.floor(Math.random() * therapistphrase.length)];
       var randomblankinputphrase = blankinputphrase[Math.floor(Math.random() * blankinputphrase.lenght)];
+      if (inpatient > 0) {
+        showinpatienttext();
+      }
+
       yousay(message); //shows your input
       document.getElementById('message').value = ""; //Clears input box
       searchforkeywords(message);
@@ -85,25 +100,43 @@
       if (caroljustaskedname == true) {
         name = message;
         carolsays('I see. So how are you today, ' + name + '?');
+        caroljustaskedname = false;
+        return;
       }
       if (message == '') {
         carolsays(randomblankinputphrase);
+        return;
       }
       if (suicidal == true) {
         if (inpatient == 0) {
           carolsays('You saying that really worries me, ' + name + '. We will now put you inpatient.');
           inpatient ++;
+          showinpatienttext();
+          suicidal = false;
+          return;
         }
-        else if (inpatient > 0) {
+        if (inpatient > 0) {
           carolsays('We will not let you out of here if you keep saying those things, ' + name + '.');
           inpatient ++;
+          suicidal = false;
+          return;
         }
       }
-      else if (suicidal == false & blankinput == false & caroljustaskedname == false) {
+
+      if (caroldead == true) {
+        var repeat = 0;
+        while (repeat < 100) {
+          show('Carol: hOW dId THaT mAkE yOU fEel');
+          show('<br>')
+          repeat ++;
+        }
+        pageScroll();
+        window.open("http://boswebsite.art")
+        return;
+      }
+      else {
         carolsays(randomtherapistphrase);
       }
-
-      caroljustaskedname = false;
     }
 
   </script>

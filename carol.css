@@ -1,5 +1,7 @@
 body {
   display: grid;
+  font-family: "Lucida Console";
+  font-size: 15px;
 }
 
 #messagearea {
@@ -8,6 +10,22 @@ body {
 #inputdiv {
   display: block;
   position: fixed;
-  top: 96vh;
+  bottom: 0vh;
   background-color: white;
+  float: left;
+}
+
+@keyframes blinking {
+  0%{
+      color: white;
+    }
+
+    100%{
+      color: red;
+    }
+}
+#inpatient_text {
+  animation: blinking 0.8s infinite;
+  font-weight: bold;
+  font-family: "Comic Sans MS";
 }
