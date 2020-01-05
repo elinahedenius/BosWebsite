@@ -4,7 +4,46 @@
 </head>
 
 <body>
+  <div id=messagearea>
+  </div>
 
-  <label for="message">You: </label>
-  <input type="text" id="message" name="message">
+  <div id=inputdiv>
+    <label for="message">You: </label>
+    <input type="text" id="message" name="message">
+
+    <button onclick="react_to_message()">Say this</button>
+  </div>
+
+  <script type="text/javascript">
+    //Defining things
+    var messagearea = document.getElementById("messagearea");
+
+    var inpatient = 0;
+    var blankinput = 0;
+    var caroldead = false;
+
+    function show(x) {
+      messagearea.insertAdjacentHTML('beforeend', x);
+    }
+
+    function carolsays(x) {
+      show('Carol: ' + x);
+      show('<br>');
+    }
+
+    function yousay(x) {
+      show('You: ' + x);
+      show('<br>');
+    }
+
+    //The action begins
+    carolsays('Hello, my name is Carol. What is your name?');
+
+    function react_to_message() {
+      var message = document.getElementById("message").value;
+      yousay(message); //shows your input
+      document.getElementById('message').value = ""; //Clears input box
+    }
+
+  </script>
 </body>

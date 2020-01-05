@@ -1,0 +1,12 @@
+body {
+  display: grid;
+}
+
+#messagearea {
+}
+
+#inputdiv {
+  display: block;
+  position: fixed;
+  top: 93vh;
+}
