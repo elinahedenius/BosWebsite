@@ -8,5 +8,6 @@ body {
 #inputdiv {
   display: block;
   position: fixed;
-  top: 93vh;
+  top: 96vh;
+  background-color: white;
 }

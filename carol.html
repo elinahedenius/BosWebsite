@@ -1,47 +1,109 @@
 <head>
   <title>Carol - Bo's Website</title>
   <link rel="stylesheet" type="text/css" href="carol.css">
-	<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/archivo-narrow" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-  <script type="text/javascript">
-    var inpatient = 0;
-    var blankinput = 0;
-    var caroldead = false;
+  <div id=messagearea>
+  </div>
 
-    //Collecting names
-    document.write("Hello, my name is Carol, what is your name?");
-    var name = prompt("Your name: ");
-    document.write("I see, " + name + ". How are you feeling today?")
+  <div id=inputdiv>
+    <label for="message">You: </label>
+    <input type="text" id="message" name="message">
+
+    <button onclick="react_to_message()">Say this</button>
+  </div>
+
+  <script type="text/javascript">
+    //Defining things
+    var messagearea = document.getElementById("messagearea");
+
+    var inpatient = 0;
+    var blankinput = false;
+    var caroldead = false;
+    var suicidal = false;
+    var questionasked = false;
+
+    function show(x) {
+      messagearea.insertAdjacentHTML('beforeend', x);
+    }
+
+    function carolsays(x) {
+      show('Carol: ' + x);
+      show('<br>');
+      show('<br>');
+    }
+
+    function yousay(x) {
+      show('You: ' + x);
+      show('<br>');
+      show('<br>');
+    }
 
     //phrases
-    var therapistphrase = ["I see...", ("How did that make you feel, " + name + "?")];
+    var therapistphrase = ['I see...', ('How did that make you feel, ' + name + '?'), 'Do you want to have it this way?', 'What makes you feel like that?'];
+    var blankinputphrase = [('It will not get better if you do not talk to me, ' + name + '.'), ('What is on your mind?'), 'You need to talk about this, you know.', ('I am just trying to help you, ' + name + '. I cannot do that if you do not talk to me.')];
 
-    function getrandom(max) {
-      return Math.floor(Math.random() * (max));
+    //React words
+    var suicidalsigns = ['suicidal', 'die', 'death', 'suicide', 'kill'];
+    var questiontocarol = ['you', '?'];
+    var killscarol = ['kills carol', 'kills Carol', 'Killsl carol', 'Kills Carol'];
+
+    function searchforkeywords(message) {
+      for (var a in suicidalsigns) {
+        var arrayelement = suicidalsigns[a];
+        if (arrayelement == message) {
+          suicidal = true;
+        }
+      }
+      for (var b in questiontocarol) {
+        arrayelement = questiontocarol[b];
+        if (arrayelement == message) {
+          questionasked = true;
+        }
+      }
+      for (var c in killscarol) {
+        var arrayelement = killscarol[c];
+        if (arrayelement == message) {
+          caroldead = true;
+        }
+      }
     }
-    //Major loop
-    while (true) {
 
-      var randomtherapistphrase = therapistphrase[getrandom(therapistphrase.lenght)];
-      if (inpatient > 0) {
-        document.write("*You are currently locked i a psychiatric unit*");
+    //The action begins
+    carolsays('Hello, my name is Carol. What is your name?');
+    var caroljustaskedname = true;
+
+    function react_to_message() {
+      var message = document.getElementById("message").value;
+      var randomtherapistphrase = therapistphrase[Math.floor(Math.random() * therapistphrase.length)];
+      var randomblankinputphrase = blankinputphrase[Math.floor(Math.random() * blankinputphrase.lenght)];
+      yousay(message); //shows your input
+      document.getElementById('message').value = ""; //Clears input box
+      searchforkeywords(message);
+
+      if (caroljustaskedname == true) {
+        name = message;
+        carolsays('I see. So how are you today, ' + name + '?');
+      }
+      if (message == '') {
+        carolsays(randomblankinputphrase);
+      }
+      if (suicidal == true) {
+        if (inpatient == 0) {
+          carolsays('You saying that really worries me, ' + name + '. We will now put you inpatient.');
+          inpatient ++;
+        }
+        else if (inpatient > 0) {
+          carolsays('We will not let you out of here if you keep saying those things, ' + name + '.');
+          inpatient ++;
+        }
+      }
+      else if (suicidal == false & blankinput == false & caroljustaskedname == false) {
+        carolsays(randomtherapistphrase);
       }
 
-      var message = prompt();
-      document.write(message);
-
-      if (message == "no" | message == "No") {
-        document.write("Well are you gonna do anything about it?");
-        continue;
-      }
-
-      else {
-      document.write(randomtherapistphrase);
-      continue;
-      }
+      caroljustaskedname = false;
     }
 
   </script>
