@@ -23,6 +23,7 @@
     var caroldead = false;
     var suicidal = false;
     var questionasked = false;
+    var messagenocount = 0;
 
     function show(x) {
       messagearea.insertAdjacentHTML('beforeend', x);
@@ -53,7 +54,7 @@
 
     }
 
-    setInterval(ScrollDiv,1)
+    setInterval(ScrollDiv,0.1)
 
     //React words
     var suicidalsigns = ['suicidal', 'die', 'death', 'suicide', 'kill'];
@@ -75,17 +76,17 @@
       var splitmessage = message.split(' ');
       console.log(splitmessage);
 
-      for (a in suicidalsigns) {
+      for (var a in suicidalsigns) {
         if(splitmessage.indexOf(suicidalsigns[a]) >= 0){
         suicidal = true;
         }
       }
-      for (a in questiontocarol) {
+      for (var a in questiontocarol) {
         if (splitmessage.indexOf(questiontocarol[a]) >= 0) {
           questionasked = true;
         }
       }
-      for (a in killscarol) {
+      for (var a in killscarol) {
         if (message == killscarol[a]){
           caroldead = true;
         }
@@ -109,10 +110,11 @@
     function react_to_message() {
       //phrases
       var therapistphrase = ['I see...', ('How did that make you feel, ' + name + '?'), 'Do you want to have it this way?', 'What makes you feel like that?'];
-      var blankinputphrase = [('It will not get better if you do not talk to me, ' + name + '.'), ('What is on your mind?'), 'You need to talk about this, you know.', ('I am just trying to help you, ' + name + '. I cannot do that if you do not talk to me.')];
-      var message = document.getElementById("message").value;
+      var blankinputphrase = ['Phrase 0', 'Phrase 1', 'Phrase 2'];
       var randomtherapistphrase = therapistphrase[Math.floor(Math.random() * therapistphrase.length)];
       var randomblankinputphrase = blankinputphrase[Math.floor(Math.random() * blankinputphrase.lenght)];
+
+      var message = document.getElementById("message").value;
       if (inpatient > 0) {
         showinpatienttext();
       }
@@ -127,8 +129,24 @@
         caroljustaskedname = false;
         return;
       }
+
+      if (message == 'no' | message == 'No' | message == 'NO') {
+        messagenocount ++;
+        if (messagenocount == 1) {
+          carolsays('Well are you going to do anything about it?');
+          return;
+        }
+        if (messagenocount == 2) {
+          carolsays(randomtherapistphrase);
+          messagenocount = 0;
+          return;
+        }
+      }
+
       if (message == '') {
-        carolsays(randomblankinputphrase);
+        console.log(blankinputphrase[1])
+        console.log(randomblankinputphrase);
+        carolsays(randomtherapistphrase);
         return;
       }
       if (suicidal == true) {
