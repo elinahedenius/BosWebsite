@@ -15,68 +15,74 @@ body {
   color: #f9f9f2;
   background-color: #1a1b5b;
   margin: 0;
+  display: grid;
+  align-items: center;
 }
 
+#welcomegif {
+  display: flex;
+  margin: auto;
+  padding-top: 15vh;
+  width: 90vw;
+  height: auto;
+  justify-content: center;
+}
 .button {
-  padding: 5px 32px;
+  border-radius: 50%;
+  border: none;
+  padding: 10px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border-radius: 12px;
   background-color: #f28fb2;
   color: white;
   cursor: pointer;
   border-color: #ffd1e1;
 }
 
-.button:hover {
-  background-color: #bd5378;
-  border-color: #eba9c0;
-}
-
-#button_text {
-  font-family: "archivo narrow";
-}
-
-#title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 #go-back-button {
-  padding-left: 3em;
+  padding-left: 2em;
   padding-top: 2em;
 }
 
-#welcomegif {
-  display: flex;
-  justify-content: center;
-  align-items: top;
-  height: 300px;
-  width: auto;
-}
-@media only screen and (max-width: 700px) {
-  body {
-    display: grid;
-    align-items: center;
-  }
-  #welcomegif {
-    display: flex;
-    margin: auto;
-    padding-top: 15vh;
-    width: 90vw;
-    height: auto;
-    justify-content: center;
-  }
+@media only screen and (min-width: 600px) {
   .button {
-    border-radius: 50%;
-    border: none;
-    padding: 8px 10px;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 12px;
+    background-color: #f28fb2;
+    color: white;
+    cursor: pointer;
+    border-color: #ffd1e1;
+    border-width: thick;
   }
 
+  .button:hover {
+    background-color: #bd5378;
+    border-color: #eba9c0;
+  }
+
+  #button_text {
+    font-family: "archivo narrow";
+  }
+
+  #title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   #go-back-button {
-    padding-left: 2em;
+    padding-left: 3em;
     padding-top: 2em;
+  }
+
+  #welcomegif {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height: 300px;
+    width: auto;
   }
 }
