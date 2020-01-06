@@ -17,80 +17,6 @@ body {
 }
 
 section {}
-
-#welcome {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 15vh;
-  padding-top: 4vh;
-  padding-bottom: 4vh;
-}
-
-#title {
-  white-space: nowrap;
-  font-size: 9vw;
-}
-
-#buttonsection {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: auto;
-}
-
-.button {
-  padding: 0px;
-  border-radius: 12px;
-  background-color: #f28fb2;
-  color: white;
-  cursor: pointer;
-  border-color: #ffd1e1;
-  width: 100%;
-  height: 50px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.button:hover {
-  background-color: #bd5378;
-  border-color: #eba9c0;
-}
-
-#button_text {
-  font-family: "archivo narrow";
-  font-size: 20px;
-}
-
-#plantbutton {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-
-#stuffbutton {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-
-#depressionbutton {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-
-.sparklygif {
-  width: auto;
-  height: 25vw;
-}
-
-@media only screen and (min-width: 600px) {
   #welcome {
     display: flex;
     justify-content: center;
@@ -113,5 +39,81 @@ section {}
   .button {
     padding: 1em 1em 1em 1em;
     height: 100px;
+  }
+
+
+
+
+@media only screen and (max-width: 600px) {
+  #welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+  }
+
+  #title {
+    white-space: nowrap;
+    font-size: 9vw;
+  }
+
+  #buttonsection {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+  }
+
+  .button {
+    padding: 0px;
+    border-radius: 12px;
+    background-color: #f28fb2;
+    color: white;
+    cursor: pointer;
+    border-color: #ffd1e1;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .button:hover {
+    background-color: #bd5378;
+    border-color: #eba9c0;
+  }
+
+  #button_text {
+    font-family: "archivo narrow";
+    font-size: 20px;
+  }
+
+  #plantbutton {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  #stuffbutton {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  #depressionbutton {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  .sparklygif {
+    width: auto;
+    height: 25vw;
   }
 }
