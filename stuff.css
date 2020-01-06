@@ -56,3 +56,17 @@ body {
   height: 300px;
   width: auto;
 }
+@media only screen and (max-width: 600px) {
+  body {
+    display: grid;
+    align-items: center;
+  }
+  #welcomegif {
+    display: flex;
+    margin: auto;
+    padding-top: 15vh;
+    width: 90vw;
+    height: auto;
+    justify-content: center;
+  }
+}
