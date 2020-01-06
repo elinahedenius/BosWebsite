@@ -55,10 +55,6 @@
 
     setInterval(ScrollDiv,1)
 
-    //phrases
-    var therapistphrase = ['I see...', ('How did that make you feel, ' + name + '?'), 'Do you want to have it this way?', 'What makes you feel like that?'];
-    var blankinputphrase = [('It will not get better if you do not talk to me, ' + name + '.'), ('What is on your mind?'), 'You need to talk about this, you know.', ('I am just trying to help you, ' + name + '. I cannot do that if you do not talk to me.')];
-
     //React words
     var suicidalsigns = ['suicidal', 'die', 'death', 'suicide', 'kill'];
     var questiontocarol = ['you', '?'];
@@ -101,7 +97,7 @@
     }
 
     //The action begins
-    carolsays('Hello, my name is Carol. What is your name?');
+    carolsays('Hello, my name is Carol, and I am your new therapist. What is your name?');
     var caroljustaskedname = true;
 
     function readinput(el, e) {
@@ -111,6 +107,9 @@
     }
 
     function react_to_message() {
+      //phrases
+      var therapistphrase = ['I see...', ('How did that make you feel, ' + name + '?'), 'Do you want to have it this way?', 'What makes you feel like that?'];
+      var blankinputphrase = [('It will not get better if you do not talk to me, ' + name + '.'), ('What is on your mind?'), 'You need to talk about this, you know.', ('I am just trying to help you, ' + name + '. I cannot do that if you do not talk to me.')];
       var message = document.getElementById("message").value;
       var randomtherapistphrase = therapistphrase[Math.floor(Math.random() * therapistphrase.length)];
       var randomblankinputphrase = blankinputphrase[Math.floor(Math.random() * blankinputphrase.lenght)];
@@ -156,7 +155,7 @@
           repeat ++;
         }
         pageScroll();
-        window.location="http://boswebsite.art"
+        window.location="index.html"
         return;
       }
       else {
