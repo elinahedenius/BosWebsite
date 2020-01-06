@@ -24,6 +24,7 @@
     var suicidal = false;
     var questionasked = false;
     var messagenocount = 0;
+    var youinmessage = false;
 
     function show(x) {
       messagearea.insertAdjacentHTML('beforeend', x);
@@ -73,21 +74,26 @@
     };
 
     function searchforkeywords(message) {
-      var splitmessage = message.split(' ');
-      console.log(splitmessage);
+      var splitmessagebyword = message.split(' ');
+      var splitmessagebychar = message.split('');
+      console.log(splitmessagebyword);
+      console.log(splitmessagebychar);
 
       for (var a in suicidalsigns) {
-        if(splitmessage.indexOf(suicidalsigns[a]) >= 0){
+        if(splitmessagebyword.indexOf(suicidalsigns[a]) >= 0){
         suicidal = true;
         }
       }
       for (var a in questiontocarol) {
-        if (splitmessage.indexOf(questiontocarol[a]) >= 0) {
+        if (splitmessagebychar.indexOf(questiontocarol[a]) >= 0) {
           questionasked = true;
+        if (splitmessagebyword.indexOf('you?') >= 0) {
+          youinmessage = true;
         }
       }
+      }
       for (var a in killscarol) {
-        if (message == killscarol[a]){
+        if (message == killscarol[a]) {
           caroldead = true;
         }
       }
@@ -109,7 +115,7 @@
 
     function react_to_message() {
       //phrases
-      var therapistphrase = ['I see...', ('How did that make you feel, ' + name + '?'), 'Do you want to have it this way?', 'What makes you feel like that?'];
+      var therapistphrase = ['I see...', ('How did that make you feel, ' + name + '?'), 'Do you want to have it this way?', 'What makes you feel like that?', 'How come?'];
       var blankinputphrase = ['Phrase 0', 'Phrase 1', 'Phrase 2'];
       var randomtherapistphrase = therapistphrase[Math.floor(Math.random() * therapistphrase.length)];
       var randomblankinputphrase = blankinputphrase[Math.floor(Math.random() * blankinputphrase.lenght)];
@@ -176,6 +182,22 @@
         window.location="index.html"
         return;
       }
+
+      if (questionasked == true) {
+         if (youinmessage == true) {
+          carolsays('This is about you, not me, ' + name + '.');
+          questionasked = false;
+          youinmessage = false;
+          return;
+        }
+        else {
+          carolsays('I think you are the one to answer that, ' + name + '.');
+          questionasked = false;
+          return;
+        }
+
+      }
+
       else {
         carolsays(randomtherapistphrase);
       }
