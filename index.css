@@ -44,7 +44,7 @@ section {}
 .button {
   width: 100%;
   border-width: thick;
-  background-color: #f0f0f0;
+  /*background-color: #f0f0f0;*/
 }
 
 .button:hover {
@@ -56,25 +56,46 @@ section {}
   font-size: 16px;
 }
 
-#plantbutton {
+#plantbuttondiv {
   padding-left: 0.5em;
   padding-right: 0.5em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
 
-#stuffbutton {
+#stuffbuttondiv {
   padding-left: 0.5em;
   padding-right: 0.5em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
 
+#depressionbuttondiv {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
 #depressionbutton {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  background-color: #99cdff;
+  border-top-color: #7eb8e6;
+  border-left-color: #7eb8e6;
+  border-bottom-color: #70a3cc;
+  border-right-color: #70a3cc;
+}
+#stuffbutton {
+  background-color: #8c87ff;
+  border-top-color: #737ae6;
+  border-left-color: #737ae6;
+  border-bottom-color: #666ccc;
+  border-right-color: #666ccc;
+}
+#plantbutton {
+  background-color: #fff98c;
+  border-top-color: #dae17e;
+  border-left-color: #dae17e;
+  border-bottom-color: #c2c870;
+  border-right-color: #c2c870;
 }
 
 .sparklygif {
