@@ -44,6 +44,7 @@ section {}
 .button {
   width: 100%;
   border-width: thick;
+  background-color: #f0f0f0;
 }
 
 .button:hover {
