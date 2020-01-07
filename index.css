@@ -81,6 +81,17 @@ section {}
   height: 25vw;
 }
 
+#coolbottomsection {
+  display: flex;
+  justify-content: center;
+  height: 40vh;
+  align-items: center;
+}
+
+#spinningearth {
+  height: 30vh;
+}
+
 @media only screen and (min-width: 600px) {
   body{
     margin: 0;
@@ -111,5 +122,9 @@ section {}
   }
   .button:hover {
     background-color: white;
+  }
+
+  #coolbottomsection {
+    display: none;
   }
 }
