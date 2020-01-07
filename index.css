@@ -44,11 +44,12 @@ section {}
 .button {
   width: 100%;
   border-width: thick;
+  text-align: center; 
   /*background-color: #f0f0f0;*/
 }
 
 .button:hover {
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 #button_text {
