@@ -106,12 +106,12 @@ section {}
 #coolbottomsection {
   display: flex;
   justify-content: center;
-  height: 35vh;
+  height: 34vh;
   align-items: center;
 }
 
 #spinningearth {
-  height: 22vh;
+  height: 25vh;
 }
 
 @media only screen and (min-width: 600px) {
