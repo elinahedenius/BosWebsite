@@ -29,16 +29,14 @@
     var questionasked = false;
     var messagenocount = 0;
     var youinmessage = false;
+    var therapistnumber = 0;
+    var caroluncomfortable = false;
+    var numberofmessages = 0;
+
+    var therapists = ['Carol', 'Anne', 'Carl', 'Ben', 'Samantha'];
 
     function show(x) {
       messagearea.insertAdjacentHTML('beforeend', x);
-    }
-
-    function carolsays(x) {
-      show('Carol: ' + x);
-      show('<br>');
-      show('<br>');
-      ScrollDiv();
     }
 
     function yousay(x) {
@@ -64,7 +62,7 @@
     //React words
     var suicidalsigns = ['suicidal', 'die', 'death', 'suicide', 'kill'];
     var questiontocarol = ['you', '?'];
-    var killscarol = ['*kills carol*', '*kills Carol*', '*Kills carol*', '*Kills Carol*'];
+    var youinappropriatebastard = ['love', 'marry', 'sexy', 'hot'];
 
     Array.prototype.inArray = function(value) {
       var i;
@@ -77,39 +75,13 @@
       return false;
     };
 
-    function searchforkeywords(message) {
-      var splitmessagebyword = message.split(' ');
-      var splitmessagebychar = message.split('');
-      console.log(splitmessagebyword);
-      console.log(splitmessagebychar);
-
-      for (var a in suicidalsigns) {
-        if(splitmessagebyword.indexOf(suicidalsigns[a]) >= 0){
-        suicidal = true;
-        }
-      }
-      for (var a in questiontocarol) {
-        if (splitmessagebychar.indexOf(questiontocarol[a]) >= 0) {
-          questionasked = true;
-        if (splitmessagebyword.indexOf('you?') >= 0) {
-          youinmessage = true;
-        }
-      }
-      }
-      for (var a in killscarol) {
-        if (message == killscarol[a]) {
-          caroldead = true;
-        }
-      }
-    }
-
     function showinpatienttext() {
       document.getElementById('inpatienttextdiv').style.display = 'block';
       document.getElementById('messagearea').style.height = '85vh';
     }
 
     //The action begins
-    carolsays('Hello, my name is Carol, and I am your new therapist. What is your name?');
+    show('Carol: Hello, my name is Carol, and I am your new therapist. What is your name?');
     var caroljustaskedname = true;
 
     function readinput(el, e) {
@@ -125,6 +97,52 @@
       var randomtherapistphrase = therapistphrase[Math.floor(Math.random() * therapistphrase.length)];
       var randomblankinputphrase = blankinputphrase[Math.floor(Math.random() * blankinputphrase.lenght)];
 
+      var currenttherapist = therapists[therapistnumber];
+      var killscarol = [('*kills ' + currenttherapist + '*'), '*kills Carol*', '*Kills carol*', '*Kills Carol*'];
+      var directedtocarol = [(currenttherapist), 'you', "you're"];
+
+      function searchforkeywords(message) {
+        var splitmessagebyword = message.split(' ');
+        var splitmessagebychar = message.split('');
+        console.log(splitmessagebyword);
+        console.log(splitmessagebychar);
+
+        for (var a in suicidalsigns) {
+          if(splitmessagebyword.indexOf(suicidalsigns[a]) >= 0){
+          suicidal = true;
+          }
+        }
+        for (var a in questiontocarol) {
+          if (splitmessagebychar.indexOf(questiontocarol[a]) >= 0) {
+            questionasked = true;
+          if (splitmessagebyword.indexOf('you?') >= 0) {
+            youinmessage = true;
+          }
+        }
+        }
+        for (var a in killscarol) {
+          if (message == killscarol[a]) {
+            caroldead = true;
+          }
+        }
+        for (var a in directedtocarol) {
+          if (splitmessagebyword.indexOf(directedtocarol[a]) >= 0) {
+            for (var a in youinappropriatebastard) {
+              if (splitmessagebyword.indexOf(youinappropriatebastard[a]) >= 0) {
+                caroluncomfortable = true;
+              }
+            }
+          }
+        }
+      }
+      
+      function carolsays(x) {
+        show(currenttherapist + ': ' + x);
+        show('<br>');
+        show('<br>');
+        ScrollDiv();
+      }
+
       var message = document.getElementById("message").value;
       if (inpatient > 0) {
         showinpatienttext();
@@ -133,6 +151,20 @@
       yousay(message); //shows your input
       document.getElementById('message').value = ""; //Clears input box
       searchforkeywords(message);
+
+      if (caroluncomfortable == true) {
+        carolsays('...');
+        therapistnumber ++;
+        console.log(therapistnumber);
+        show(currenttherapist + ' has decided to no longer see you. Your new therapist is ' + therapists[therapistnumber] + '.');
+        show('</br>');
+        show('</br>');
+        show(therapists[therapistnumber] + ': Hello ' + name + ', I am ' + therapists[therapistnumber] + ', your new therapist. I have heard a lot about you.');
+        show('</br>');
+        show('</br>');
+        caroluncomfortable = false;
+        return;
+      }
 
       if (caroljustaskedname == true) {
         name = message;
