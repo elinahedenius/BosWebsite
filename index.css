@@ -1,5 +1,5 @@
 h1 {
-  font-size: 8rem;
+  font-size: 6vw;
 }
 
 h2 {
@@ -11,9 +11,10 @@ h3 {
 }
 
 body {
-  font-family: "archivo narrow";
+  font-family: 'Lucida Console';
   color: #f9f9f2;
   background-color: #1a1b5b;
+  justify-content: center;
 }
 
 section {}
@@ -30,7 +31,6 @@ section {}
 
 #title {
   white-space: nowrap;
-  font-size: 9vw;
 }
 
 #buttonsection {
@@ -42,26 +42,17 @@ section {}
 }
 
 .button {
-  padding: 0px;
-  border-radius: 12px;
-  background-color: #f28fb2;
-  color: white;
-  cursor: pointer;
-  border-color: #ffd1e1;
   width: 100%;
-  height: 50px;
-  text-align: center;
-  vertical-align: middle;
+  border-width: thick;
 }
 
 .button:hover {
-  background-color: #bd5378;
-  border-color: #eba9c0;
+  background-color: white;
 }
 
 #button_text {
-  font-family: "archivo narrow";
-  font-size: 20px;
+  font-family: "Lucida Console";
+  font-size: 16px;
 }
 
 #plantbutton {
@@ -91,7 +82,11 @@ section {}
 }
 
 @media only screen and (min-width: 600px) {
+  body{
+    margin: 0;
+  }
   #welcome {
+    background-color: #1a1b5b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,16 +97,19 @@ section {}
   }
 
   #title {
-    font-size: 8vw;
   }
 
   #buttonsection {
     display: flex;
     margin: 0;
+    height: 10vh;
   }
 
   .button {
-    padding: 1em 1em 1em 1em;
-    height: 100px;
+    border-width: thick;
+    height: 7vh;
+  }
+  .button:hover {
+    background-color: white;
   }
 }

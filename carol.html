@@ -7,11 +7,14 @@
   <div id=messagearea>
   </div>
 
+  <div id='inpatienttextdiv' style='display: none;'>
+      <span id="inpatient_text">You are currently locked in a psychiatric unit.</span>
+  </div>
+
   <div id=inputdiv>
     <label for="message">You: </label>
     <input type="text" id="message" name="message" onkeydown="readinput(this, event)">
-    <button onclick="react_to_message()">Say this</button>
-    <span id="inpatient_text" style="display: none;">You are currently locked in a psychiatric unit.</span>
+    <button id='saythisbutton' onclick="react_to_message()">Say this</button>
   </div>
 
   <script type="text/javascript">
@@ -100,7 +103,8 @@
     }
 
     function showinpatienttext() {
-      document.getElementById('inpatient_text').style.display = 'flex';
+      document.getElementById('inpatienttextdiv').style.display = 'block';
+      document.getElementById('messagearea').style.height = '85vh';
     }
 
     //The action begins

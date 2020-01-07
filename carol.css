@@ -1,21 +1,46 @@
 body {
   display: grid;
+  justify-content: center;
   font-family: "Lucida Console";
-  font-size: 15px;
+  font-size: 2.5vh;
 }
 
 #messagearea {
   overflow-y: scroll;
   height: 90vh;
+  width: 98vw;
 }
 
 #inputdiv {
-  display: block;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
   position: fixed;
   bottom: 2vh;
+  align-items: center;
+}
+#message {
+  width: 71vw;
+  height: 5vh;
+  font-size: 2.5vh;
+  font-family: 'Lucida Console'
+}
+#saythisbutton {
+  height: 5vh;
+  font-family: 'Lucida Console';
+  font-size: 2.3vh;
+  width: 20vw;
+}
+#inpatienttextdiv {
+  display: block;
+  position: fixed;
+  bottom: 7vh;
   background-color: white;
-  float: left;
-  width: 100vw;
+}
+#inpatient_text {
+  animation: blinking 0.8s infinite;
+  font-weight: bold;
+  font-family: "Comic Sans MS";
 }
 
 @keyframes blinking {
@@ -27,25 +52,30 @@ body {
       color: red;
     }
 }
-#inpatient_text {
-  animation: blinking 0.8s infinite;
-  font-weight: bold;
-  font-family: "Comic Sans MS";
-}
 
-/*@media only screen and (max-width: 700px) {
+@media only screen and (min-width: 600px) {
   body {
-    justify-content: center;
+    display: grid;
+    font-family: "Lucida Console";
+    font-size: 16px;
   }
+
   #inputdiv {
-    display: flex;
-    justify-content: center;
-    margin:auto;
-    height: 8vh;
-    align-items: center;
+    display: block;
+    position: fixed;
+    bottom: 2vh;
+    background-color: white;
+    float: left;
+    width: 100vw;
   }
   #message {
-    margin: auto;
-    width: 70vw;
-    height: 8vh;
+    width: auto;
+    height: 4vh;
+    font-size: 16px;
   }
+  #saythisbutton {
+    width: auto;
+    height: 4vh;
+    font-size: 16px; 
+  }
+}
